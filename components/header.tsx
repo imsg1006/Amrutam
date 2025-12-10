@@ -24,7 +24,7 @@ export default function Header() {
   {/* ---------- LOGO CENTERED ---------- */}
   <div className="max-w-7xl bg-[#fff7e2] mx-auto px-4 py-6 flex justify-center">
     <h1 className="text-3xl h-37px w-267px font-medium tracking-[0.4em] text-[#33643F]">
-      AMRUTAM
+      <img src={"/logo.png"} alt="Amrutam Logo" className="h-9 w-auto inline-block mr-2 -mt-1" />
     </h1>
   </div>
 

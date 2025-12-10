@@ -10,17 +10,17 @@ export default function Featured() {
         {/* Logo Placeholders */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-9 gap-6 items-center justify-center">
           {[
-            "",
-            "YOURSTORY",
-            "Travel Mag",
-            "livingetc",
-            "VOICE OF FASHION",
-            "GQ",
-            "LIFESTYLE ASIA",
-            "VOGUE",
-            "ZERO 30",
+            <img src={"/toi.png"} alt="The Time of India"></img>,
+            <img src={"/your.png"} alt="YourStory"></img>,
+            <img src={"/traveler.png"} alt="Traveler"></img>,
+            <img src={"/etc.png"} alt="livingetc"></img>,
+            <img src={"/cof.png"} alt="VOICE OF FASHION"></img>,
+            <img src={"/gq.png"} alt="GQ"></img>,
+            <img src={"/life.png"} alt="Life Of Asia"></img>,
+            <img src={"/vogue.png"} alt="Vogue"></img>,
+            <img src={"/forbes.png"} alt="ZERO 30"></img>,
           ].map((logo, i) => (
-            <div key={i} className="bg-gray-100 rounded p-4 h-20 flex items-center justify-center">
+            <div key={i} className="bg-transparent rounded p-4 h-20 flex items-center justify-center">
               <span className="text-xs text-gray-500 text-center">{logo}</span>
             </div>
           ))}
