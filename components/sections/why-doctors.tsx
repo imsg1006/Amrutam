@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { PhoneIcon, MessageCircle, Wallet, Clock } from "lucide-react"
+import { PhoneIcon, MessageCircle, Wallet, Clock, Heart } from "lucide-react"
 
 export default function WhyDoctors() {
   const benefits = [
@@ -30,6 +30,28 @@ export default function WhyDoctors() {
       hasConnection: false,
     },
     {
+      title: "Choose Your Session Mode",
+      description:
+        "Amrutam offers you to connect with patients via Instant Chat, Instant Call, or Schedule Video call. Each option offers flexibility and personalized care to suit individual needs.",
+      icon: "heart",
+      color: "bg-green-200",
+      iconColor: "text-green-700",
+      hasSessionMode: true,
+      sessionModes: [
+        { name: "Free Call", time: "₹15 / Min", hasCheck: true },
+        { name: "Video", time: "₹15/Min", hasCheck: true },
+        { name: "Chat", time: "₹15 / Text" },
+      ],
+      patientDetails: {
+        name: "Geethanjali Shah",
+        age: 34,
+        gender: "Female",
+        height: "134 cm",
+        weight: "64 kg",
+        concern: "Immunity",
+      },
+    },
+    {
       title: "Smart Wallet",
       description:
         "We understand the need for seamless transactions. With Amrutam Wallet, you can easily withdraw payments, and for your security, a one-time password is sent to your registered mobile number during withdrawals.",
@@ -56,7 +78,7 @@ export default function WhyDoctors() {
   ]
 
   return (
-    <section className="w-full bg-[#fff7e2] py-20 px-4 relative overflow-hidden">
+    <section className="w-full bg-amber-50 py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -73,7 +95,7 @@ export default function WhyDoctors() {
               >
                 {/* Left - Interactive Card with Connection/Wallet State */}
                 <div
-                  className={`relative h-80 flex items-center justify-center px-4 ${idx % 2 === 1 ? "lg:order-2" : ""}`}
+                  className={`relative h-96 flex items-center justify-center px-4 ${idx % 2 === 1 ? "lg:order-2" : ""}`}
                 >
                   {/* Large cream circle background */}
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -87,11 +109,69 @@ export default function WhyDoctors() {
                       {benefit.icon === "message" && <MessageCircle className={`w-8 h-8 ${benefit.iconColor}`} />}
                       {benefit.icon === "wallet" && <Wallet className={`w-8 h-8 ${benefit.iconColor}`} />}
                       {benefit.icon === "clock" && <Clock className={`w-8 h-8 ${benefit.iconColor}`} />}
+                      {benefit.icon === "heart" && <Heart className={`w-8 h-8 ${benefit.iconColor}`} />}
                     </div>
                   </div>
 
+                  {/* Session Mode Selection Card */}
+                  {benefit.hasSessionMode && (
+                    <div className="relative z-10 space-y-6 w-full">
+                      {/* Session Mode Selection Box */}
+                      <div className="bg-white rounded-lg shadow-lg p-6 border border-yellow-200 max-w-sm">
+                        <p className="text-sm font-semibold text-gray-800 mb-4">Select your mode of session</p>
+                        <div className="grid grid-cols-3 gap-3">
+                          {benefit.sessionModes?.map((mode, modeIdx) => (
+                            <div
+                              key={modeIdx}
+                              className={`p-3 rounded-lg border-2 text-center cursor-pointer transition ${
+                                mode.hasCheck
+                                  ? "border-green-600 bg-green-50"
+                                  : "border-gray-200 bg-white hover:border-gray-300"
+                              }`}
+                            >
+                              <p className="text-xs font-semibold text-gray-900">{mode.name}</p>
+                              <p className="text-xs text-gray-600 mt-1">{mode.time}</p>
+                              {mode.hasCheck && <p className="text-xs text-green-600 mt-2">✓</p>}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Patient Details Card */}
+                      <div className="bg-white rounded-lg shadow-md p-5 border border-gray-200 max-w-sm text-sm">
+                        <p className="text-gray-700 font-medium mb-3">Hi, Dr. Prema, here are my details:</p>
+                        <div className="space-y-2 text-gray-700">
+                          <div className="flex justify-between">
+                            <span>Name:</span>
+                            <span className="font-medium">{benefit.patientDetails?.name}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Age:</span>
+                            <span className="font-medium">{benefit.patientDetails?.age}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Gender:</span>
+                            <span className="font-medium">{benefit.patientDetails?.gender}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Height:</span>
+                            <span className="font-medium">{benefit.patientDetails?.height}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Weight:</span>
+                            <span className="font-medium">{benefit.patientDetails?.weight}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Concern:</span>
+                            <span className="font-medium">{benefit.patientDetails?.concern}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Doctor Profile Card */}
-                  {!benefit.hasWallet && (
+                  {!benefit.hasWallet && !benefit.hasSessionMode && (
                     <div className="relative z-10 bg-white rounded-lg shadow-lg p-4 w-64 border border-yellow-200">
                       <div className="flex items-start gap-3 mb-4">
                         <div className="w-20 h-20 bg-gray-300 rounded-lg flex-shrink-0 flex items-center justify-center">
