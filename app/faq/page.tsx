@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import Footer from "@/components/footer"
+import { useState } from "react" 
 import FaqHeader from "../../components/sections/faq-header"
 import FaqAccordion from "../../components/sections/faq-accordian"
+import AppDownload from "@/components/sections/benefits/app-download"
+import FaqFooter from "@/components/sections/faq-footer"
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("consultation")
@@ -17,19 +18,39 @@ export default function FAQPage() {
           "We provide three types of consultations - video, instant call and chat consultation. Each option offers flexibility and personalized care to suit individual needs.",
       },
       {
-        question: "How long does a consultation typically last?",
+        question: "Can I get refund for the wallet money?",
         answer:
-          "Most consultations last between 15-30 minutes depending on the nature of your health concern. Video and audio consultations can be scheduled for specific durations.",
+          "Yes, you can request a refund for unused wallet balance. Refunds are processed within 5-7 business days to your original payment method.",
       },
       {
-        question: "Can I reschedule my consultation?",
+        question: "What is the Amrutam Forum?",
         answer:
-          "Yes, you can reschedule your consultation up to 24 hours before the scheduled time. Use the app to manage your appointments easily.",
+          "The Amrutam Forum is a community platform where you can ask health questions, share experiences with other users, and get answers from our network of Ayurvedic practitioners.",
       },
       {
-        question: "What should I prepare for my consultation?",
+        question: "Can I pause the audio consultation?",
         answer:
-          "Please have your medical history, current medications, and any relevant reports ready. Find a quiet, well-lit space for video consultations.",
+          "Yes, you can pause audio consultations at any time. The remaining time will be preserved for you to continue later within the same day.",
+      },
+      {
+        question: "Is there a minimum duration for an audio consultation?",
+        answer:
+          "No, there is no minimum duration. You can consult for as long as you need, and charges apply on a per-minute basis.",
+      },
+      {
+        question: "Can I get refund for the wallet money?",
+        answer:
+          "Yes, you can request a refund for unused wallet balance. Refunds are processed within 5-7 business days to your original payment method.",
+      },
+      {
+        question: "What is the Amrutam Forum?",
+        answer:
+          "The Amrutam Forum is a community platform where you can ask health questions, share experiences with other users, and get answers from our network of Ayurvedic practitioners.",
+      },
+      {
+        question: "Can I pause the audio consultation?",
+        answer:
+          "Yes, you can pause audio consultations at any time. The remaining time will be preserved for you to continue later within the same day.",
       },
     ],
     wallet: [
@@ -112,68 +133,86 @@ export default function FAQPage() {
   )
 
   return (
-    <div className="min-h-screen flex flex-col bg-amber-50">
+    <div className="min-h-screen flex flex-col">
       <FaqHeader />
 
-      {/* Main Content */}
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-12">
-        {/* FAQ Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">FAQ</h1>
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-md">
-              <input
-                type="text"
-                placeholder="Search for any question"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600"
-              />
-              <svg
-                className="absolute left-3 top-3.5 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      <div
+        className="relative w-full py-12 md:py-16"
+        style={{
+          backgroundImage: "url('/faqbg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          {/* FAQ Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">FAQ</h1>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md">
+                <input
+                  type="text"
+                  placeholder="Search for any queries you have"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 bg-white"
                 />
-              </svg>
+                <svg
+                  className="absolute left-3 top-3.5 w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Category Tabs */}
-        <div className="flex justify-center gap-8 mb-12 border-b border-gray-300 pb-4">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`pb-2 font-semibold transition ${
-                activeCategory === category.id
-                  ? "text-gray-900 border-b-2 border-gray-900"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
+      {/* Main Content */}
+      <main className="flex-1 bg-[#fff7e2]">
+        <div className="max-w-4xl mx-auto w-full px-4 py-12">
+          <div className="flex justify-center gap-6   md:gap-8 mb-12 border-b border-gray-300 pb-4 overflow-x-auto">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`pb-2 font-semibold text-base whitespace-nowrap transition ${
+                  activeCategory === category.id
+                    ? "text-gray-900 border-b-2 border-gray-900"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          {/* FAQ Items */}
+          <div className="space-y-4">
+            {filteredFaqs.length > 0 ? (
+              filteredFaqs.map((faq, index) => <FaqAccordion key={index} question={faq.question} answer={faq.answer} />)
+            ) : (
+              <p className="text-center text-gray-600 py-8">No FAQs found for your search query</p>
+            )}
+          </div>
         </div>
-
-        {/* FAQ Items */}
-        <div className="space-y-4">
-          {filteredFaqs.length > 0 ? (
-            filteredFaqs.map((faq, index) => <FaqAccordion key={index} question={faq.question} answer={faq.answer} />)
-          ) : (
-            <p className="text-center text-gray-600 py-8">No FAQs found for your search query</p>
-          )}
+        <div className="flex justify-center mb-12">
+          <button className="px-8 py-2 border cursor-pointer border-gray-300 rounded-lg text-gray-600 hover:border-gray-400 transition-colors">
+            Load More
+            <span className="ml-2">›</span>
+          </button>
         </div>
       </main>
-
-      <Footer />
+      <AppDownload />
+      <FaqFooter/>
     </div>
   )
 }

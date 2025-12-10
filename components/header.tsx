@@ -8,18 +8,23 @@ export default function Header() {
     <nav className="w-full border-b border-gray-200">
 
   {/* ---------- TOP DARK BAR ---------- */}
-  <div className="w-full bg-[#373636] text-white">
-    <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <p className="text-sm text-[#D9D9D9]  ">
-        Register Yourself As An Amrutam Doctor
-      </p>
+  <div className="w-full bg-[#373636] sticky text-white">
+  <div className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-3 items-center">
 
+    {/* CENTER TEXT */}
+    <p className="text-md text-[#D9D9D9] text-center col-start-2">
+      Register Yourself As An Amrutam Doctor
+    </p>
+
+    {/* RIGHT BUTTON */}
+    <div className="flex justify-end">
       <button className="bg-[#3A643B] hover:bg-green-800 text-white px-5 py-2 rounded-lg font-medium">
-         
         Join Now
       </button>
     </div>
+
   </div>
+</div> 
 
   {/* ---------- LOGO CENTERED ---------- */}
   <div className="max-w-7xl bg-[#fff7e2] mx-auto px-4 py-6 flex justify-center">

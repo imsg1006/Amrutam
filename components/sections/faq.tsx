@@ -71,7 +71,7 @@ export default function FAQ() {
               </div>
 
               {expandedIndex === i && (
-                <div className="bg-gray-50 px-5 py-4 border-t border-gray-200">
+                <div className="bg-[#fff7e2] px-5 py-4 border-t border-gray-200">
                   <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               )}

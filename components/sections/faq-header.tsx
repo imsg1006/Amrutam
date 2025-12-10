@@ -1,32 +1,39 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import Link from "next/link" 
 
 export default function FaqHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <>
-      {/* Top Bar with Phone */}
-      <div className="w-full bg-white border-b border-gray-200 py-3 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-start">
-          <svg className="w-5 h-5 text-green-700 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.92 7.02C17.45 6.18 16.64 5.59 15.77 5.59c-1.53 0-2.82 1.25-2.82 2.82v9.59c0 1.57 1.29 2.82 2.82 2.82 1.53 0 2.82-1.25 2.82-2.82V8.4c0-.78-.31-1.52-.89-2.38z" />
-          </svg>
-          <span className="text-gray-800 font-semibold">+91 9826352321</span>
-        </div>
-      </div>
+       
 
       {/* Main Header */}
-      <header className="w-full bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Logo */}
-          <div className="flex items-center justify-center py-6">
-            <Link href="/" className="text-3xl font-bold tracking-widest text-gray-900 hover:text-green-700 transition">
-               <img src={"/logo.png"} alt="Amrutam Logo" className="h-9 w-auto inline-block mr-2 -mt-1" />
-            </Link>
-          </div>
+      <header className="w-full mt-4 bg-transparent border-b border-gray-200">
+  <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between py-4 px-4">
+
+    {/* LEFT: Phone Number */}
+    <div className="flex items-center w-full sm:w-auto justify-center sm:justify-start mb-3 sm:mb-0">
+      <img className="p-2 w-8 h-8" src="/call.png" alt="" />
+      <span className="text-green-700 font-semibold text-sm sm:text-base">
+        +91 9826352321
+      </span>
+    </div>
+
+    {/* CENTER: Logo */}
+    <div className="w-full sm:w-auto flex justify-center order-first sm:order-0 mb-3 sm:mb-0">
+      <Link href="/">
+        <img src="/logo.png" alt="Amrutam Logo" className="h-10 w-auto" />
+      </Link>
+    </div>
+
+    {/* RIGHT: Spacer (Hidden on Mobile) */}
+    <div className="hidden sm:block w-24"></div>
+
+  </div> 
+
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center justify-center gap-8 pb-4 border-b border-gray-100">
@@ -104,7 +111,7 @@ export default function FaqHeader() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-        </div>
+        
       </header>
     </>
   )

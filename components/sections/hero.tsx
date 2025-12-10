@@ -40,12 +40,7 @@ export default function Hero() {
 
             {/* APP STORE BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <Button className="bg-black text-white hover:bg-gray-800 py-5 md:py-6 px-4 md:px-6 text-sm md:text-base font-semibold w-full sm:w-auto">
-                GET IT ON Google Play
-              </Button>
-              <Button className="bg-black text-white hover:bg-gray-800 py-5 md:py-6 px-4 md:px-6 text-sm md:text-base font-semibold w-full sm:w-auto">
-                Download on the App Store
-              </Button>
+               <img src="/download.png" alt="" />
             </div>
           </div>
 
@@ -54,7 +49,7 @@ export default function Hero() {
 
             {/* FLOATING AVATARS */}
             <div className="absolute -left-8 lg:-left-16 top-8 lg:top-12 z-20">
-              <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full shadow-lg overflow-hidden border-4 border-white bg-blue-400">
+              <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full shadow-lg overflow-hidden  ">
                 <Image
                   src="/person4.png"
                   width={112}
@@ -66,7 +61,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-20">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full shadow-lg overflow-hidden border-3 border-white bg-gray-300">
+              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full shadow-lg overflow-hidden  ">
                 <Image
                   src="/person3.png"
                   width={64}
@@ -78,7 +73,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute right-6 lg:right-10 bottom-6 lg:bottom-10 z-20">
-              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full shadow-lg overflow-hidden border-4 border-white bg-gray-300">
+              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full shadow-lg overflow-hidden  ">
                 <Image
                   src="/person2.png"
                   width={80}
@@ -90,7 +85,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute right-0 lg:right-2 top-1/3 z-20">
-              <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full shadow-lg overflow-hidden border-4 border-white bg-blue-400">
+              <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full shadow-lg overflow-hidden  ">
                 <Image
                   src="/person1.png"
                   width={112}
@@ -103,8 +98,8 @@ export default function Hero() {
 
             {/* PHONE MOCKUP */}
             <div className="relative w-48 lg:w-64 z-30">
-              <div className="bg-black rounded-3xl shadow-2xl overflow-hidden border-8 border-gray-900">
-                <div className="bg-gray-100 rounded-2xl overflow-hidden">
+              <div className="bg-transparent rounded-3xl   overflow-hidden ">
+                <div className="bg-transparent rounded-2xl overflow-hidden">
                   <Image
                     src="/mobile.png"
                     width={400}
@@ -121,8 +116,8 @@ export default function Hero() {
           {/* MOBILE PHONE DISPLAY */}
           <div className="lg:hidden flex justify-center relative -mx-4 px-4 py-12 -my-12">
             <div className="relative w-40 sm:w-48">
-              <div className="bg-red-700 rounded-3xl shadow-2xl overflow-hidden  ">
-                <div className="bg-gray-100 rounded-2xl overflow-hidden">
+              <div className="bg-transparent rounded-3xl   overflow-hidden  ">
+                <div className="bg-transparent rounded-2xl overflow-hidden">
                   <Image
                     src="/mobile.png"
                     width={400}

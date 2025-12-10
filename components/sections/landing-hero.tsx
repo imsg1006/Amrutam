@@ -9,7 +9,7 @@ export default function LandingHero() {
           <div className="flex flex-col justify-center">
             <p className="text-[#666666] text-lg mb-4">Namaste, Welcome to Amrutam</p>
 
-            <h1 className="text-5xl text-[#0c0c0c] lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl text-[#0c0c0c] lg:text-2xl font-bold mb-6 leading-tight">
               Join Amrutam – <span className="text-[#3a643c]">Grow Your Practice</span>
             </h1>
 
@@ -53,25 +53,21 @@ export default function LandingHero() {
 
               {/* Doctors group image placeholder */}
               <div className="relative w-full h-full flex items-center justify-center">
-                <div className="bg-linear-to-br from-gray-100 to-gray-200 rounded-full w-96 h-96 flex items-center justify-center shadow-lg">
-                  <span className="text-gray-500 text-center px-8">
-                    <div className="text-sm">Doctors Group Image</div>
-                    <div className="text-xs mt-2">Replace with your doctors image</div>
-                  </span>
-                </div>
+                 <img width={400} height={400} className="relative" src={"/Vector2.png"}></img>
+                 <img className="absolute" src="/doctors.png" alt="" />
               </div>
 
               {/* Decorative icons */}
-              <div className="absolute top-12 right-8 w-16 h-16 bg-yellow-200 rounded-full flex items-center justify-center shadow-md">
-                <span className="text-2xl">🌿</span>
+              <div className="absolute top-2 right-8 w-16 h-16 bg-yellow-200 rounded-full flex items-center justify-center shadow-md">
+                <img src={"/yoga.png"}></img>
               </div>
               <div className="absolute bottom-20 left-8 w-14 h-14 bg-yellow-200 rounded-full flex items-center justify-center shadow-md">
-                <span className="text-xl">📋</span>
+               <img src={"/food.png"}></img>
               </div>
               <div className="absolute bottom-12 right-4 w-12 h-12 bg-green-200 rounded-full flex items-center justify-center shadow-md">
-                <span className="text-lg">🗂️</span>
+                <img src="/med.png" alt="" />
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>

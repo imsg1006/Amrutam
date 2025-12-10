@@ -23,7 +23,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="w-full bg-[#fff7e2] py-16 px-4 border-b-4 border-red-500">
+    <section className="w-full bg-[#fff7e2] py-16 px-4  ">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-green-900 text-center mb-3">What other Ayurvedic Doctors are Saying</h2>
         <p className="text-gray-600 text-center mb-12">

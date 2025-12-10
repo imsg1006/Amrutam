@@ -1,6 +1,6 @@
 export default function Featured() {
   return (
-    <section className="w-full bg-[#fff7e2] py-16 px-4 border-b-2 border-gray-300">
+    <section className="w-full bg-[#fff7e2] py-16 px-4  ">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-green-900 mb-3">Featured</h2>
         <p className="text-gray-600 mb-12">
