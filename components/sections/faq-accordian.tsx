@@ -18,7 +18,7 @@ export default function FaqAccordion({ question, answer }: FaqAccordionProps) {
       >
         <span className="text-lg font-semibold text-gray-900 text-left">{question}</span>
         <span
-          className={`text-2xl text-gray-600 transition-transform duration-300 flex-shrink-0 ml-4 ${
+          className={`text-2xl text-gray-600 transition-transform duration-300  shrink-0 ml-4 ${
             isExpanded ? "rotate-45" : ""
           }`}
         >

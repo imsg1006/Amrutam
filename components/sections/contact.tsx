@@ -16,8 +16,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image Placeholder */}
           <div className="flex justify-center">
-            <div className="w-full bg-gray-100 rounded-lg p-6 h-80 flex items-center justify-center overflow-hidden">
-              <span className="text-gray-500"></span>
+            <div className="w-full bg-transparent rounded-lg p-6 h-80 flex items-center justify-center overflow-hidden">
+               <img src={"/connect.png"}></img>
             </div>
           </div>
 

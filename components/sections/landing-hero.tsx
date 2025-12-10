@@ -53,7 +53,7 @@ export default function LandingHero() {
 
               {/* Doctors group image placeholder */}
               <div className="relative w-full h-full flex items-center justify-center">
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-full w-96 h-96 flex items-center justify-center shadow-lg">
+                <div className="bg-linear-to-br from-gray-100 to-gray-200 rounded-full w-96 h-96 flex items-center justify-center shadow-lg">
                   <span className="text-gray-500 text-center px-8">
                     <div className="text-sm">Doctors Group Image</div>
                     <div className="text-xs mt-2">Replace with your doctors image</div>

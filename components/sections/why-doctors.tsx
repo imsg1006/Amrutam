@@ -38,7 +38,7 @@ export default function WhyDoctors() {
       iconColor: "text-green-700",
       hasSessionMode: true,
       sessionModes: [
-        { name: "Free Call", time: "₹15 / Min", hasCheck: true },
+        { name: "Free Call", time: "₹15 / Min" },
         { name: "Video", time: "₹15/Min", hasCheck: true },
         { name: "Chat", time: "₹15 / Text" },
       ],
@@ -78,7 +78,7 @@ export default function WhyDoctors() {
   ]
 
   return (
-    <section className="w-full bg-amber-50 py-20 px-4 relative overflow-hidden">
+    <section className="w-full bg-[#fff7e2] py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -91,7 +91,7 @@ export default function WhyDoctors() {
           {benefits.map((benefit, idx) => (
             <div key={idx} className="relative">
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+                className={`grid grid-cols-1 lg:grid-cols-2  gap-12 items-center ${idx % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* Left - Interactive Card with Connection/Wallet State */}
                 <div
@@ -99,11 +99,11 @@ export default function WhyDoctors() {
                 >
                   {/* Large cream circle background */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-64 h-64 bg-yellow-100 rounded-full opacity-40 absolute"></div>
+                    <div className="w-64 h-64 bg-[#ffeec3] rounded-full opacity-40 absolute"></div>
                   </div>
 
                   {/* Icon Badge */}
-                  <div className="absolute top-0 right-8 z-10">
+                  <div className="absolute top-0   left-96 z-10">
                     <div className={`w-16 h-16 ${benefit.color} rounded-full flex items-center justify-center`}>
                       {benefit.icon === "phone" && <PhoneIcon className={`w-8 h-8 ${benefit.iconColor}`} />}
                       {benefit.icon === "message" && <MessageCircle className={`w-8 h-8 ${benefit.iconColor}`} />}
@@ -117,29 +117,36 @@ export default function WhyDoctors() {
                   {benefit.hasSessionMode && (
                     <div className="relative z-10 space-y-6 w-full">
                       {/* Session Mode Selection Box */}
-                      <div className="bg-white rounded-lg shadow-lg p-6 border border-yellow-200 max-w-sm">
-                        <p className="text-sm font-semibold text-gray-800 mb-4">Select your mode of session</p>
-                        <div className="grid grid-cols-3 gap-3">
-                          {benefit.sessionModes?.map((mode, modeIdx) => (
-                            <div
-                              key={modeIdx}
-                              className={`p-3 rounded-lg border-2 text-center cursor-pointer transition ${
-                                mode.hasCheck
-                                  ? "border-green-600 bg-green-50"
-                                  : "border-gray-200 bg-white hover:border-gray-300"
-                              }`}
-                            >
-                              <p className="text-xs font-semibold text-gray-900">{mode.name}</p>
-                              <p className="text-xs text-gray-600 mt-1">{mode.time}</p>
-                              {mode.hasCheck && <p className="text-xs text-green-600 mt-2">✓</p>}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                      <div className="relative w-full flex justify-center items-center py-16">
+                              
 
-                      {/* Patient Details Card */}
+  {/* Upper Left Card */}
+  <div className="absolute bottom-6 left-0">
+    <div className="bg-white rounded-lg shadow-lg p-6 border border-yellow-200 max-w-sm">
+      <p className="text-sm font-semibold text-gray-800 mb-4">Select your mode of session</p>
+      <div className="grid grid-cols-3 gap-3">
+        {benefit.sessionModes?.map((mode, modeIdx) => (
+          <div
+            key={modeIdx}
+            className={`p-3 rounded-lg border-2 text-center cursor-pointer transition ${
+              mode.hasCheck
+                ? "border-green-600 bg-green-50"
+                : "border-gray-200 bg-white hover:border-gray-300"
+            }`}
+          >
+            <p className="text-xs font-semibold text-gray-900">{mode.name}</p>
+            <p className="text-xs text-gray-600 mt-1">{mode.time}</p>
+            {mode.hasCheck && <p className="text-xs text-green-600 mt-2">✓</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Right Card */}
+                  <div className="absolute  top-16 right-0">
                       <div className="bg-white rounded-lg shadow-md p-5 border border-gray-200 max-w-sm text-sm">
-                        <p className="text-gray-700 font-medium mb-3">Hi, Dr. Prema, here are my details:</p>
+                       <p className="text-gray-700 font-medium mb-3">Hi, Dr. Prema, here are my details:</p>
                         <div className="space-y-2 text-gray-700">
                           <div className="flex justify-between">
                             <span>Name:</span>
@@ -164,18 +171,21 @@ export default function WhyDoctors() {
                           <div className="flex justify-between">
                             <span>Concern:</span>
                             <span className="font-medium">{benefit.patientDetails?.concern}</span>
-                          </div>
-                        </div>
-                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
                     </div>
                   )}
 
                   {/* Doctor Profile Card */}
                   {!benefit.hasWallet && !benefit.hasSessionMode && (
-                    <div className="relative z-10 bg-white rounded-lg shadow-lg p-4 w-64 border border-yellow-200">
+                    <div className="relative z-10 bg-white rounded-lg shadow-lg bottom-14 right-16 p-4 w-64 border border-yellow-200">
                       <div className="flex items-start gap-3 mb-4">
-                        <div className="w-20 h-20 bg-gray-300 rounded-lg flex-shrink-0 flex items-center justify-center">
-                          <span className="text-gray-500 text-xs text-center">Doctor Image</span>
+                        <div className="w-20 h-20 bg-gray-300 rounded-lg shrink-0 flex items-center justify-center">
+                          <span className="text-gray-500 text-xs text-center"><img src={"/prema.jpg"}></img></span>
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-900 text-sm">{benefit.doctorName}</h4>
@@ -215,11 +225,11 @@ export default function WhyDoctors() {
 
                   {/* Connecting State */}
                   {benefit.hasConnection && (
-                    <div className="absolute bottom-16 left-8 z-20 bg-white rounded-lg shadow-md p-3 border border-gray-200">
+                    <div className="absolute bottom-6 left-52 z-20 bg-white rounded-lg shadow-md p-3 border border-gray-200">
                       <div className="text-center">
                         <div className="text-xs font-medium text-gray-700 mb-2">Connecting...</div>
                         <div className="w-12 h-12 bg-yellow-200 rounded-lg flex items-center justify-center mx-auto">
-                          <span className="text-gray-500 text-xs">Avatar</span>
+                          <span className="text-gray-500 text-xs"><img src={"/prema.jpg"}></img></span>
                         </div>
                         <p className="text-xs text-gray-500 mt-2 max-w-xs">
                           You'll connect with a suitable doctor from our networks

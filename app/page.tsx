@@ -1,10 +1,6 @@
-import Hero from "@/components/sections/hero"
-import Forum from "@/components/sections/forum"
+import Hero from "@/components/sections/hero" 
 import Featured from "@/components/sections/featured"
-import WhyDoctors from "@/components/sections/why-doctors"
-import SessionModes from "@/components/sections/session-modes"
-import SmartWallet from "@/components/sections/smart-wallet"
-import FlexibleTiming from "@/components/sections/flexible-timing"
+import WhyDoctors from "@/components/sections/why-doctors" 
 import JoinCircle from "@/components/sections/join-circle"
 import Testimonials from "@/components/sections/testimonials"
 import FAQ from "@/components/sections/faq"
@@ -20,11 +16,7 @@ export default function Home() {
       <Header />
       <LandingHero/>
       <Featured />
-      <WhyDoctors />
-      {/* <Forum /> */}
-      {/* <SessionModes /> */}
-      {/* <SmartWallet /> */}
-      {/* <FlexibleTiming /> */}
+      <WhyDoctors /> 
       <JoinCircle />
       <AppFeatures />
       <Testimonials />

@@ -34,9 +34,8 @@ export default function Testimonials() {
           {testimonials.map((testimonial, i) => (
             <div key={i} className="bg-amber-100 transition-transform duration-300 hover:scale-110 rounded-lg p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-sm font-bold">
-                  {testimonial.name.charAt(0)}
-                  {testimonial.name.split(" ")[1].charAt(0)}
+                <div className="w-5 h-7   rounded-full flex items-center justify-center ">
+                  <img className="rounded-full" src={"/testimonials.jpg"}></img>
                 </div>
                 <div>
                   <p className="font-bold text-gray-900">{testimonial.name}</p>

@@ -24,7 +24,7 @@ export default function FaqHeader() {
           {/* Logo */}
           <div className="flex items-center justify-center py-6">
             <Link href="/" className="text-3xl font-bold tracking-widest text-gray-900 hover:text-green-700 transition">
-              AMRUTAM
+               <img src={"/logo.png"} alt="Amrutam Logo" className="h-9 w-auto inline-block mr-2 -mt-1" />
             </Link>
           </div>
 
